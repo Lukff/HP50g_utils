@@ -3,7 +3,7 @@
 "Por Lucas Fernandes"
 DROP DROP @documentacao@
 \<< "Sistema A*X=B Simbolico
-V2.1 por Lucas Fernandes"
+V2.2 por Lucas Fernandes"
   @campos do formulario@
   { { "A" "Matriz A" }
     { "X" "Lista de Solucoes" 5 }
