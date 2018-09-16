@@ -1,0 +1,45 @@
+%%HP: T(3)A(R)F(.);
+"Solucionador de Circuitos"
+"Por Lucas Fernandes"
+DROP DROP @documentacao@
+\<< "Sistema A*X=B Simbolico
+V2.1 por Lucas Fernandes"
+  @campos do formulario@
+  { { "A" "Matriz A" }
+    { "X" "Lista de Solucoes" 5 }
+    { "B" "Vetor de Constantes" } }
+  { 1 } @colunas do formulario@
+  @sem valores de RESET@
+  { }
+  @valores iniciais@
+  { [[ '1 + 4/s' '-4/s' ][ '-4/s' '4/s+4+2*s' ]] @valor de exemplo para A@
+    { 'I1' 'I2' } @valor de exemplo para X"
+    [ 1 0 ] }     @valor de exemplo para B"
+  INFORM @formulario@
+
+  @se o formulario for preenchido@
+  IF 1 ==
+  THEN
+    OBJ\-> DROP \-> a x b @guarda os valores recebidos do formulario@
+    \<<
+      a SIZE OBJ\->
+      DROP \-> lin col @guarda as quantidades de linha e coluna@
+      \<<
+        IF lin col ==
+        THEN
+          1 col FOR n
+            a n COL- DROP
+            b n COL+ @substitui a coluna n da matriz por B@
+          NEXT @FOR@
+
+          col \->LIST DET @lista com o determinante das matrizes@
+          a DET @determinante da matriz A@
+          / x @obtem os resultados@
+          \->TAG @atribui nomes a cada resultado@
+        ELSE
+          "ERRO: A Matriz A inserida nao e quadrada" @erro de entrada@
+        END
+      \>>
+    \>>
+  END
+\>>
