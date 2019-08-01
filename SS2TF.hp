@@ -1,0 +1,17 @@
+%%HP: T(3)A(R)F(.);
+\<< "State Space to Tranfer Function
+by Lucas Fernandes" MSGBOX
+[[ -1 0 0 ]
+ [ 0 -2 0 ]
+ [ 0 0 -3 ]]
+[[ 1 ]
+ [ 3 ]
+ [ 4 ]]
+[[ 2 0 1 ]] \-> RA RB RC
+  \<< "C*[SI-A]^-1*B" { { "A" "Matriz A" } { "B" "Matriz B" } { "C" "Matriz C" } } { 1 1 } { } RA RB RC 3 \->LIST INFORM DROP OBJ\-> DROP \-> A B C
+    \<< A SIZE 1 GET \->Q IDN 's' * \-> SI
+      \<< C SI A - INV * B * EVAL
+      \>>
+    \>>
+  \>>
+\>>
