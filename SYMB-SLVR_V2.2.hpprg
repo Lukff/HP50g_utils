@@ -1,5 +1,5 @@
 %%HP: T(3)A(R)F(.);
-"Solucionador de Circuitos"
+"Solucionador de Matrizes Simbolicas"
 "Por Lucas Fernandes"
 DROP DROP @documentacao@
 \<< "Sistema A*X=B Simbolico
